@@ -1,0 +1,43 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# This is Project 1\n",
+        "\n",
+        "## Section 1: Data\n",
+        "\n",
+        "I cleaned some data\n",
+        "\n",
+        "## Section 2: Analysis\n",
+        "\n",
+        "I analyzed the data\n"
+      ],
+      "id": "4aa2ea2d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "l = [1, 2, 3, 4]\n",
+        "average = np.mean(l)\n",
+        "print(average)"
+      ],
+      "id": "f07fc896",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/joezouki/miniconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
