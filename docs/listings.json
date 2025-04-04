@@ -5,5 +5,9 @@
       "/blog/project1/index.html",
       "/blog/project2/index.html"
     ]
+  },
+  {
+    "listing": "/quarto_website/blog.html",
+    "items": []
   }
 ]
