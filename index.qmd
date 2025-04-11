@@ -2,18 +2,10 @@
 title: "Joe Zouki"
 image: "images/Scanned_Documents_page-0001.jpg"
 about:
-    template: jolla
-    links:
-        - icon: envelope
-          href: mailto:joezouki03@gmail.com
-        - icon: linkedin
-          href: https://www.linkedin.com/in/joezouki
-<<<<<<< HEAD
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:joezouki03@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/joezouki
 ---
-=======
----
-
-Hey!
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
->>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
