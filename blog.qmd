@@ -5,6 +5,6 @@ listing:
   type: grid
   sort: "date desc"
   categories: false
----
+----
 
 
