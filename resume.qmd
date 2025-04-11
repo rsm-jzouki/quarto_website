@@ -1,5 +1,5 @@
 ---
-title: "My_Resume"
+title: "My Resume"
 ---
 
 {{< pdf images/joe_resume.pdf width=100% height=800 >}}
