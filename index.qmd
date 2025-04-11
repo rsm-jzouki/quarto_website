@@ -1,0 +1,11 @@
+---
+title: "Joe Zouki"
+image: "images/Scanned_Documents_page-0001.jpg"
+about:
+    template: jolla
+    links:
+        - icon: envelope
+          href: mailto:joezouki03@gmail.com
+        - icon: linkedin
+          href: https://www.linkedin.com/in/joezouki
+---

@@ -1,0 +1,19 @@
+# This is Project 2
+
+## Section 1: Data
+
+I cleaned some data
+
+## Section 2: Analysis
+
+I analyzed the data
+
+
+```{python}
+
+import numpy as np
+l = [1, 2, 3, 4]
+average = np.mean(l)
+print(average)
+
+```
