@@ -49,6 +49,16 @@
     "text": "This is Project 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is Project 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+<<<<<<< HEAD
+=======
+    "objectID": "quarto_website/blog.html",
+    "href": "quarto_website/blog.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+>>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
     "objectID": "blog/project2/index.html",
     "href": "blog/project2/index.html",
     "title": "This is Project 2",

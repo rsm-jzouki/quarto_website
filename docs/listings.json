@@ -5,5 +5,12 @@
       "/blog/project1/index.html",
       "/blog/project2/index.html"
     ]
+<<<<<<< HEAD
+=======
+  },
+  {
+    "listing": "/quarto_website/blog.html",
+    "items": []
+>>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
   }
 ]

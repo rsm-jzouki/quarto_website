@@ -5,10 +5,7 @@ listing:
   type: grid
   sort: "date desc"
   categories: false
-<<<<<<< HEAD
-----
-=======
 ---
->>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
+
 
 

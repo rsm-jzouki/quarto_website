@@ -8,4 +8,12 @@ about:
           href: mailto:joezouki03@gmail.com
         - icon: linkedin
           href: https://www.linkedin.com/in/joezouki
+<<<<<<< HEAD
 ---
+=======
+---
+
+Hey!
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+>>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
