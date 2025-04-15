@@ -1,6 +1,5 @@
 ---
 title: "Joe Zouki"
-image: "images/Scanned_Documents_page-0001.jpg"
 about:
   template: jolla
   links:
@@ -9,3 +8,31 @@ about:
     - icon: linkedin
       href: https://www.linkedin.com/in/joezouki
 ---
+
+::: {.hero style="text-align: center;"}
+
+<img src="images/Scanned_Documents_page-0001.jpg" alt="Joe Zouki" width="150px" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" />
+
+## 👋 Hi, I'm Joe
+
+> 🎓 MSBA Stduent | 📊 Data Analyst | 💡 Turning Analytics into Strategy
+
+
+<div style="max-width: 700px; margin: 0 auto;">
+I'm a data analyst and MSBA student at UC San Diego. I build machine learning solutions that solve real business problems and guide strategic decisions.
+</div>
+
+:::
+
+---
+
+## 💼 Skills
+
+- 🧠 **Focus**: Customer Analytics, Business Analytics, Predictive Modeling  
+- 💻 **Tools**: Python, SQL, Scikit-learn, Tableau, Power BI  
+- 🌍 **Languages**: English, French, Arabic  
+
+
+<p style="text-align:center; font-size: 0.9rem;">
+  © 2025 Joe Zouki
+</p>

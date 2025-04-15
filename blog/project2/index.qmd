@@ -1,19 +1,12 @@
-# This is Project 2
+---
+title: "Yelp Review Sentiment Prediction"
+description: "Used NLP to predict review ratings with CatBoost on 700K Yelp reviews."
+date: 2023-04-15
+categories: [ML, NLP, Python]
+---
 
-## Section 1: Data
+# ⭐ Sentiment Analysis & Rating Prediction
 
-I cleaned some data
-
-## Section 2: Analysis
-
-I analyzed the data
-
-
-```{python}
-
-import numpy as np
-l = [1, 2, 3, 4]
-average = np.mean(l)
-print(average)
-
-```
+- Extracted sentiment scores and features from 700K reviews.
+- Achieved RMSE of 0.91 using CatBoost, outperforming baseline models.
+- Applied 5-fold cross-validation and hyperparameter tuning.

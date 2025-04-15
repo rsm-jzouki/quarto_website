@@ -1,19 +1,17 @@
-# This is Project 1
+---
+title: "HP Capstone Project"
+description: "Built a product similarity model using embeddings to compare competitor products."
+date: 2025-04-14
+categories: [Data Science, ML, Competitive Intelligence]
+---
 
-## Section 1: Data
+### HP Similarity Model  
+Built an ML-based embedding model to compare products and analyze competitor pricing.
 
-I cleaned some data
+> 🛠️ Python, Embeddings, Clustering
 
-## Section 2: Analysis
+# 🧠 HP Capstone: Product Similarity Modeling
 
-I analyzed the data
-
-
-```{python}
-
-import numpy as np
-l = [1, 2, 3, 4]
-average = np.mean(l)
-print(average)
-
-```
+- Developed a similarity scoring model using feature embeddings and clustering.
+- Evaluated product substitutability across 6 categories and 10+ markets.
+- Delivered pricing and product recommendations to improve strategic decision-making.

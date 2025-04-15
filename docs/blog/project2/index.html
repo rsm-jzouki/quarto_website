@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-04-15">
+<meta name="description" content="Used NLP to predict review ratings with CatBoost on 700K Yelp reviews.">
 
-<title>index – Joe's Website</title>
+<title>Yelp Review Sentiment Prediction – Joe’s Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -150,8 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section-1-data" id="toc-section-1-data" class="nav-link active" data-scroll-target="#section-1-data">Section 1: Data</a></li>
-  <li><a href="#section-2-analysis" id="toc-section-2-analysis" class="nav-link" data-scroll-target="#section-2-analysis">Section 2: Analysis</a></li>
+  <li><a href="#sentiment-analysis-rating-prediction" id="toc-sentiment-analysis-rating-prediction" class="nav-link active" data-scroll-target="#sentiment-analysis-rating-prediction">⭐ Sentiment Analysis &amp; Rating Prediction</a></li>
   </ul>
 </nav>
     </div>
@@ -160,14 +127,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">This is Project 2</h1>
-</div>
+<h1 class="title">Yelp Review Sentiment Prediction</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ML</div>
+    <div class="quarto-category">NLP</div>
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Used NLP to predict review ratings with CatBoost on 700K Yelp reviews.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 15, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -177,26 +160,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="section-1-data" class="level2">
-<h2 class="anchored" data-anchor-id="section-1-data">Section 1: Data</h2>
-<p>I cleaned some data</p>
-</section>
-<section id="section-2-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="section-2-analysis">Section 2: Analysis</h2>
-<p>I analyzed the data</p>
-<<<<<<< HEAD
-<div id="b4c3974a" class="cell" data-execution_count="1">
-=======
-<div id="974143ec" class="cell" data-execution_count="1">
->>>>>>> 85fb528e3898ccae52f33c6f7893fb1599993ef3
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>average <span class="op">=</span> np.mean(l)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.5</code></pre>
-</div>
-</div>
+<section id="sentiment-analysis-rating-prediction" class="level1">
+<h1>⭐ Sentiment Analysis &amp; Rating Prediction</h1>
+<ul>
+<li>Extracted sentiment scores and features from 700K reviews.</li>
+<li>Achieved RMSE of 0.91 using CatBoost, outperforming baseline models.</li>
+<li>Applied 5-fold cross-validation and hyperparameter tuning.</li>
+</ul>
 
 
 </section>

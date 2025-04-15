@@ -1,1 +1,82 @@
-/* css styles */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Base Layout */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0fff4; /* light minty green */
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #2e7d32; /* rich green */
+  font-weight: 600;
+}
+
+/* Hero Image */
+.hero img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Hero Section Styling */
+.hero {
+  background-color: #e0f7e9; /* subtle green tint */
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero h1, .hero p {
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Links */
+a {
+  color: #00796b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #004d40;
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #d0f2e1;
+  border-bottom: 2px solid #a5d6a7;
+}
+
+/* Cards & Content Blocks */
+.card, .listing-item, .quarto-grid-item {
+  background-color: #ffffff;
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover effect */
+.quarto-grid-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

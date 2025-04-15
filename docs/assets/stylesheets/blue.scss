@@ -1,0 +1,40 @@
+// Base styling
+body {
+    background-color: #001f3f; // Navy blue
+    color: #f1f1f1;            // Light text for contrast
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    padding: 2rem;
+  }
+  
+  // Headings
+  h1, h2, h3, h4 {
+    color: #00d1ff;  // Light cyan/sky blue for headers
+  }
+  
+  // Links
+  a {
+    color: #ffdd57;
+    text-decoration: none;
+  
+    &:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+  }
+  
+  // Navbar
+  .navbar {
+    background-color: #003366; // Darker navy
+    border-bottom: 2px solid #00d1ff;
+  }
+  
+  // Cards / Content Blocks (optional)
+  .card, .listing-item, .quarto-grid-item {
+    background-color: #002244;
+    border: 1px solid #004477;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
