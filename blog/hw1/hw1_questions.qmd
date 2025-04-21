@@ -2,7 +2,7 @@
 title: "Replication and Analysis of Karlan and List (2007)"
 subtitle: "Examining the Effects of Match Rates on Charitable Giving"
 author: "Joe Zouki"
-date: April 21, 2020
+date: April 21, 2025
 format: 
   html:
     theme: cosmo
