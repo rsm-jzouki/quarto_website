@@ -1,8 +1,8 @@
 {
   "listing": "/blog.html",
   "items": [
+    "/blog/hw1/hw1_questions.html",
     "/blog/project1/index.html",
-    "/blog/project2/index.html",
-    "/blog/hw1/hw1_questions.html"
+    "/blog/project2/index.html"
   ]
 }
