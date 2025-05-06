@@ -937,7 +937,7 @@ Difference: $-1.67</code></pre>
 </div>
 </div>
 </div>
-<p>This simulation illustrates the Law of Large Numbers by showing how sample estimates converge to the true population parameter as sample size increases. The blue line represents the cumulative average difference in donation rates between treatment and control groups across multiple simulated samples. With small samples (left side), estimates fluctuate dramatically, sometimes deviating far from the true difference of 0.0042 (red dashed line). However, as the sample size grows (moving right on the log scale), these fluctuations diminish and the estimate stabilizes, eventually converging to the true population difference. This demonstrates why large samples are crucial for reliable statistical inference - they provide more precise estimates by reducing the influence of random variation.</p>
+<p>This simulation demonstrates the Law of Large Numbers by showing how the estimated difference in donation rates converges to the true value (0.0042) as sample size increases. With small samples (left side), estimates vary widely and unreliably. As sample size grows (right side), the estimates stabilize and approach the true population difference. This illustrates why larger samples provide more reliable statistical estimates - they minimize the impact of random variation and produce results closer to the true population parameters.</p>
 </section>
 <section id="central-limit-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h3>
@@ -1005,25 +1005,14 @@ Difference: $-1.67</code></pre>
 </div>
 </div>
 </div>
-<p>These simulations illustrate several important statistical concepts:</p>
-<ol type="1">
-<li>As sample size increases, the sampling distribution becomes more concentrated around the true difference (narrower distribution).</li>
-<li>The standard error decreases with larger sample sizes, improving precision.</li>
-<li>With larger samples, the probability of detecting a positive effect (when one truly exists) increases.</li>
-<li>The sampling distribution increasingly resembles a normal distribution as sample size grows, confirming the Central Limit Theorem.</li>
-</ol>
+<p>These simulations illustrate the Central Limit Theorem with several key insights: • As sample size increases (from 50 to 1000), the sampling distribution of the difference in means becomes increasingly normal-shaped • With small samples (n=50), the distribution is irregular with only 43.6% of samples showing a positive difference • Larger samples (n=1000) produce a more symmetrical bell curve with 74.7% of samples correctly showing a positive difference • The standard error decreases with larger sample sizes, making the distribution narrower and more concentrated around the true difference (0.0042) • The probability of detecting the true effect increases substantially with sample size</p>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Our replication of Karlan and List (2007) confirms their key findings:</p>
-<ol type="1">
-<li><p>Matching donations significantly increases the likelihood that people will donate, with the treatment group showing a {donation_rate_treatment - donation_rate_control:.2f} percentage point higher donation rate than the control group.</p></li>
-<li><p>The specific match ratio (1:1, 2:1, or 3:1) does not significantly affect donation rates. The mere presence of a match appears to be the primary driver of increased giving, rather than the specific match amount.</p></li>
-<li><p>While matching increases participation rates, it does not significantly affect the size of donations among those who choose to give.</p></li>
-</ol>
-<p>These findings have important implications for charitable organizations designing fundraising campaigns. Offering matching donations can effectively increase participation, but organizations may not need to secure high match ratios to achieve this benefit. A simple 1:1 match appears to be nearly as effective as higher match ratios.</p>
-<p>The simulation experiments also demonstrate the importance of adequate sample sizes in detecting treatment effects in field experiments, particularly when the true effects are relatively small.</p>
+<p>My replication of Karlan and List (2007) confirms their key findings about charitable giving and price incentives. Matching donations significantly increases participation rates by 0.42 percentage points (a 23% relative increase), demonstrating that price incentives matter in charitable giving. However, the specific match ratio (1:1, 2:1, or 3:1) doesn’t significantly affect donation rates - the mere presence of a match appears to be the primary driver of increased giving. Interestingly, while matching boosts participation, it doesn’t significantly affect donation amounts among those who choose to give.</p>
+<p>These findings have important practical implications for charitable organizations. When designing fundraising campaigns, offering matching donations can effectively increase participation, but organizations may not need to secure high match ratios to achieve this benefit. A simple 1:1 match appears nearly as effective as higher match ratios, potentially allowing more efficient use of matching funds.</p>
+<p>Our simulation experiments also highlight the importance of adequate sample sizes in detecting treatment effects, particularly when the true effects are relatively small. This study’s large sample was crucial for reliably identifying the impact of matching on donation behavior.</p>
 
 
 <!-- -->
@@ -1872,88 +1861,84 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-385"><a href="#cb13-385" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-387"><a href="#cb13-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-388"><a href="#cb13-388" aria-hidden="true" tabindex="-1"></a>This simulation illustrates the Law of Large Numbers by showing how sample estimates converge to the true population parameter as sample size increases. The blue line represents the cumulative average difference in donation rates between treatment and control groups across multiple simulated samples. With small samples (left side), estimates fluctuate dramatically, sometimes deviating far from the true difference of 0.0042 (red dashed line). However, as the sample size grows (moving right on the log scale), these fluctuations diminish and the estimate stabilizes, eventually converging to the true population difference. This demonstrates why large samples are crucial for reliable statistical inference - they provide more precise estimates by reducing the influence of random variation.</span>
+<span id="cb13-388"><a href="#cb13-388" aria-hidden="true" tabindex="-1"></a>This simulation demonstrates the Law of Large Numbers by showing how the estimated difference in donation rates converges to the true value (0.0042) as sample size increases. With small samples (left side), estimates vary widely and unreliably. As sample size grows (right side), the estimates stabilize and approach the true population difference. This illustrates why larger samples provide more reliable statistical estimates - they minimize the impact of random variation and produce results closer to the true population parameters.</span>
 <span id="cb13-389"><a href="#cb13-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-390"><a href="#cb13-390" aria-hidden="true" tabindex="-1"></a><span class="fu">### Central Limit Theorem</span></span>
-<span id="cb13-391"><a href="#cb13-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-392"><a href="#cb13-392" aria-hidden="true" tabindex="-1"></a>The Central Limit Theorem states that the sampling distribution of the mean approaches a normal distribution as the sample size increases, regardless of the underlying distribution.</span>
-<span id="cb13-393"><a href="#cb13-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-396"><a href="#cb13-396" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-397"><a href="#cb13-397" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: central-limit-theorem</span></span>
-<span id="cb13-398"><a href="#cb13-398" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Distribution of sample means for different sample sizes"</span></span>
-<span id="cb13-399"><a href="#cb13-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-400"><a href="#cb13-400" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
-<span id="cb13-401"><a href="#cb13-401" aria-hidden="true" tabindex="-1"></a>n_experiments <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb13-402"><a href="#cb13-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-403"><a href="#cb13-403" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 4 subplots</span></span>
-<span id="cb13-404"><a href="#cb13-404" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
-<span id="cb13-405"><a href="#cb13-405" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
-<span id="cb13-406"><a href="#cb13-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-407"><a href="#cb13-407" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(sample_sizes):</span>
-<span id="cb13-408"><a href="#cb13-408" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Storage for sample means</span></span>
-<span id="cb13-409"><a href="#cb13-409" aria-hidden="true" tabindex="-1"></a>    sample_means <span class="op">=</span> np.zeros(n_experiments)</span>
-<span id="cb13-410"><a href="#cb13-410" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-411"><a href="#cb13-411" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run n_experiments experiments</span></span>
-<span id="cb13-412"><a href="#cb13-412" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n_experiments):</span>
-<span id="cb13-413"><a href="#cb13-413" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Generate random samples of size sample_size</span></span>
-<span id="cb13-414"><a href="#cb13-414" aria-hidden="true" tabindex="-1"></a>        control_sample <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, p_control, sample_size)</span>
-<span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a>        treatment_sample <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, p_treatment, sample_size)</span>
-<span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Calculate the difference in means</span></span>
-<span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a>        control_mean <span class="op">=</span> np.mean(control_sample)</span>
-<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>        treatment_mean <span class="op">=</span> np.mean(treatment_sample)</span>
-<span id="cb13-420"><a href="#cb13-420" aria-hidden="true" tabindex="-1"></a>        sample_means[j] <span class="op">=</span> treatment_mean <span class="op">-</span> control_mean</span>
-<span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-422"><a href="#cb13-422" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate standard error</span></span>
-<span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a>    std_error <span class="op">=</span> np.sqrt((p_control <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_control) <span class="op">/</span> sample_size) <span class="op">+</span> </span>
-<span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a>                        (p_treatment <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_treatment) <span class="op">/</span> sample_size))</span>
-<span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-426"><a href="#cb13-426" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate percentage of samples where difference &gt; 0</span></span>
-<span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a>    pct_positive <span class="op">=</span> np.mean(sample_means <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb13-428"><a href="#cb13-428" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-429"><a href="#cb13-429" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot histogram of sample means</span></span>
-<span id="cb13-430"><a href="#cb13-430" aria-hidden="true" tabindex="-1"></a>    axes[i].hist(sample_means, bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'#3498db'</span>, </span>
-<span id="cb13-431"><a href="#cb13-431" aria-hidden="true" tabindex="-1"></a>                density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="ss">f'SE: </span><span class="sc">{</span>std_error<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
-<span id="cb13-432"><a href="#cb13-432" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add normal distribution curve</span></span>
-<span id="cb13-434"><a href="#cb13-434" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="bu">min</span>(sample_means), <span class="bu">max</span>(sample_means), <span class="dv">100</span>)</span>
-<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a>    axes[i].plot(x, stats.norm.pdf(x, true_diff, std_error), </span>
-<span id="cb13-436"><a href="#cb13-436" aria-hidden="true" tabindex="-1"></a>                <span class="st">'r-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Normal dist.'</span>)</span>
-<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a>    axes[i].axvline(x<span class="op">=</span>true_diff, color<span class="op">=</span><span class="st">'g'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, </span>
-<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a>                   label<span class="op">=</span><span class="ss">f'True diff: </span><span class="sc">{</span>true_diff<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
-<span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a>    axes[i].axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Zero'</span>)</span>
-<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(<span class="ss">f'Sample Size = </span><span class="sc">{</span>sample_size<span class="sc">}</span><span class="ch">\n</span><span class="ss">(+diff: </span><span class="sc">{</span>pct_positive<span class="sc">:.1f}</span><span class="ss">%)'</span>, </span>
-<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a>                     fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb13-444"><a href="#cb13-444" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">'Difference in Sample Means'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">'Density'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb13-446"><a href="#cb13-446" aria-hidden="true" tabindex="-1"></a>    axes[i].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb13-447"><a href="#cb13-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-448"><a href="#cb13-448" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb13-449"><a href="#cb13-449" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb13-450"><a href="#cb13-450" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a>These simulations illustrate several important statistical concepts:</span>
-<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>As sample size increases, the sampling distribution becomes more concentrated around the true difference (narrower distribution).</span>
-<span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>The standard error decreases with larger sample sizes, improving precision.</span>
-<span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>With larger samples, the probability of detecting a positive effect (when one truly exists) increases.</span>
-<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The sampling distribution increasingly resembles a normal distribution as sample size grows, confirming the Central Limit Theorem.</span>
-<span id="cb13-458"><a href="#cb13-458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-459"><a href="#cb13-459" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb13-390"><a href="#cb13-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-391"><a href="#cb13-391" aria-hidden="true" tabindex="-1"></a><span class="fu">### Central Limit Theorem</span></span>
+<span id="cb13-392"><a href="#cb13-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-393"><a href="#cb13-393" aria-hidden="true" tabindex="-1"></a>The Central Limit Theorem states that the sampling distribution of the mean approaches a normal distribution as the sample size increases, regardless of the underlying distribution.</span>
+<span id="cb13-394"><a href="#cb13-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-397"><a href="#cb13-397" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-398"><a href="#cb13-398" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: central-limit-theorem</span></span>
+<span id="cb13-399"><a href="#cb13-399" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Distribution of sample means for different sample sizes"</span></span>
+<span id="cb13-400"><a href="#cb13-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-401"><a href="#cb13-401" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
+<span id="cb13-402"><a href="#cb13-402" aria-hidden="true" tabindex="-1"></a>n_experiments <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb13-403"><a href="#cb13-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-404"><a href="#cb13-404" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 4 subplots</span></span>
+<span id="cb13-405"><a href="#cb13-405" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb13-406"><a href="#cb13-406" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb13-407"><a href="#cb13-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-408"><a href="#cb13-408" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(sample_sizes):</span>
+<span id="cb13-409"><a href="#cb13-409" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Storage for sample means</span></span>
+<span id="cb13-410"><a href="#cb13-410" aria-hidden="true" tabindex="-1"></a>    sample_means <span class="op">=</span> np.zeros(n_experiments)</span>
+<span id="cb13-411"><a href="#cb13-411" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-412"><a href="#cb13-412" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run n_experiments experiments</span></span>
+<span id="cb13-413"><a href="#cb13-413" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n_experiments):</span>
+<span id="cb13-414"><a href="#cb13-414" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Generate random samples of size sample_size</span></span>
+<span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a>        control_sample <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, p_control, sample_size)</span>
+<span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a>        treatment_sample <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, p_treatment, sample_size)</span>
+<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Calculate the difference in means</span></span>
+<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>        control_mean <span class="op">=</span> np.mean(control_sample)</span>
+<span id="cb13-420"><a href="#cb13-420" aria-hidden="true" tabindex="-1"></a>        treatment_mean <span class="op">=</span> np.mean(treatment_sample)</span>
+<span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a>        sample_means[j] <span class="op">=</span> treatment_mean <span class="op">-</span> control_mean</span>
+<span id="cb13-422"><a href="#cb13-422" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate standard error</span></span>
+<span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a>    std_error <span class="op">=</span> np.sqrt((p_control <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_control) <span class="op">/</span> sample_size) <span class="op">+</span> </span>
+<span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a>                        (p_treatment <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_treatment) <span class="op">/</span> sample_size))</span>
+<span id="cb13-426"><a href="#cb13-426" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate percentage of samples where difference &gt; 0</span></span>
+<span id="cb13-428"><a href="#cb13-428" aria-hidden="true" tabindex="-1"></a>    pct_positive <span class="op">=</span> np.mean(sample_means <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb13-429"><a href="#cb13-429" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-430"><a href="#cb13-430" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot histogram of sample means</span></span>
+<span id="cb13-431"><a href="#cb13-431" aria-hidden="true" tabindex="-1"></a>    axes[i].hist(sample_means, bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'#3498db'</span>, </span>
+<span id="cb13-432"><a href="#cb13-432" aria-hidden="true" tabindex="-1"></a>                density<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="ss">f'SE: </span><span class="sc">{</span>std_error<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-434"><a href="#cb13-434" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add normal distribution curve</span></span>
+<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="bu">min</span>(sample_means), <span class="bu">max</span>(sample_means), <span class="dv">100</span>)</span>
+<span id="cb13-436"><a href="#cb13-436" aria-hidden="true" tabindex="-1"></a>    axes[i].plot(x, stats.norm.pdf(x, true_diff, std_error), </span>
+<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a>                <span class="st">'r-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Normal dist.'</span>)</span>
+<span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a>    axes[i].axvline(x<span class="op">=</span>true_diff, color<span class="op">=</span><span class="st">'g'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, </span>
+<span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a>                   label<span class="op">=</span><span class="ss">f'True diff: </span><span class="sc">{</span>true_diff<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a>    axes[i].axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Zero'</span>)</span>
+<span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(<span class="ss">f'Sample Size = </span><span class="sc">{</span>sample_size<span class="sc">}</span><span class="ch">\n</span><span class="ss">(+diff: </span><span class="sc">{</span>pct_positive<span class="sc">:.1f}</span><span class="ss">%)'</span>, </span>
+<span id="cb13-444"><a href="#cb13-444" aria-hidden="true" tabindex="-1"></a>                     fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">'Difference in Sample Means'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb13-446"><a href="#cb13-446" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">'Density'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb13-447"><a href="#cb13-447" aria-hidden="true" tabindex="-1"></a>    axes[i].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb13-448"><a href="#cb13-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-449"><a href="#cb13-449" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-450"><a href="#cb13-450" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a>These simulations illustrate the Central Limit Theorem with several key insights:</span>
+<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a>• As sample size increases (from 50 to 1000), the sampling distribution of the difference in means becomes increasingly normal-shaped</span>
+<span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a>• With small samples (n=50), the distribution is irregular with only 43.6% of samples showing a positive difference</span>
+<span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a>• Larger samples (n=1000) produce a more symmetrical bell curve with 74.7% of samples correctly showing a positive difference</span>
+<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a>• The standard error decreases with larger sample sizes, making the distribution narrower and more concentrated around the true difference (0.0042)</span>
+<span id="cb13-458"><a href="#cb13-458" aria-hidden="true" tabindex="-1"></a>• The probability of detecting the true effect increases substantially with sample size</span>
+<span id="cb13-459"><a href="#cb13-459" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a>Our replication of Karlan and List (2007) confirms their key findings:</span>
+<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
 <span id="cb13-462"><a href="#cb13-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-463"><a href="#cb13-463" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Matching donations significantly increases the likelihood that people will donate, with the treatment group showing a {donation_rate_treatment - donation_rate_control:.2f} percentage point higher donation rate than the control group.</span>
+<span id="cb13-463"><a href="#cb13-463" aria-hidden="true" tabindex="-1"></a>My replication of Karlan and List (2007) confirms their key findings about charitable giving and price incentives. Matching donations significantly increases participation rates by 0.42 percentage points (a 23% relative increase), demonstrating that price incentives matter in charitable giving. However, the specific match ratio (1:1, 2:1, or 3:1) doesn't significantly affect donation rates - the mere presence of a match appears to be the primary driver of increased giving. Interestingly, while matching boosts participation, it doesn't significantly affect donation amounts among those who choose to give.</span>
 <span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>The specific match ratio (1:1, 2:1, or 3:1) does not significantly affect donation rates. The mere presence of a match appears to be the primary driver of increased giving, rather than the specific match amount.</span>
+<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a>These findings have important practical implications for charitable organizations. When designing fundraising campaigns, offering matching donations can effectively increase participation, but organizations may not need to secure high match ratios to achieve this benefit. A simple 1:1 match appears nearly as effective as higher match ratios, potentially allowing more efficient use of matching funds.</span>
 <span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>While matching increases participation rates, it does not significantly affect the size of donations among those who choose to give.</span>
-<span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-469"><a href="#cb13-469" aria-hidden="true" tabindex="-1"></a>These findings have important implications for charitable organizations designing fundraising campaigns. Offering matching donations can effectively increase participation, but organizations may not need to secure high match ratios to achieve this benefit. A simple 1:1 match appears to be nearly as effective as higher match ratios.</span>
-<span id="cb13-470"><a href="#cb13-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-471"><a href="#cb13-471" aria-hidden="true" tabindex="-1"></a>The simulation experiments also demonstrate the importance of adequate sample sizes in detecting treatment effects in field experiments, particularly when the true effects are relatively small.</span>
+<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a>Our simulation experiments also highlight the importance of adequate sample sizes in detecting treatment effects, particularly when the true effects are relatively small. This study's large sample was crucial for reliably identifying the impact of matching on donation behavior.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
