@@ -154,8 +154,6 @@ mle_lambda = plot_poisson_loglikelihood(blueprinty_data["patents"])
 # Use the function with the patent data
 mle_lambda = plot_poisson_loglikelihood(blueprinty_data['patents'])
 
-_todo: Find the MLE by optimizing your likelihood function with optim() in R or sp.optimize() in Python._
-
 ```{python}
 from scipy import optimize
 
